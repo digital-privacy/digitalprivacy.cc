@@ -119,7 +119,7 @@ publishdir = "docs"
     [[params.about.item]]
       name = "Alessio Garofalo"
       position = "Co-Founder"
-      description = "Alessio is a cool guy, really!"
+      description = "Alessio has been involved with IT and digital rights since forever. He is a technically sophisticated and high-performance professional skilled at defining, designing, and implementing a highly secure and continuous-deployment pipeline to update applications in cloud environments."
       img = "alessio.jpg"
       alt = "Alessio Garofalo"
       social = [
