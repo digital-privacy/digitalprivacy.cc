@@ -3,6 +3,7 @@ baseurl = "https://digitalprivacy.cc"
 title = "Digital Privacy"
 languageCode = "en-us"
 theme = "hugo-elate-theme"
+publishdir = "docs"
 
 [params]
   
