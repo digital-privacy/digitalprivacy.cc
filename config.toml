@@ -6,7 +6,7 @@ theme = "hugo-elate-theme"
 publishdir = "docs"
 
 [params]
-  
+
   custom_css = ["css/custom1.css", "css/custom2.css"]
 
   # Meta
@@ -29,7 +29,7 @@ publishdir = "docs"
 
     # You can add custom links before or after the default links
     # Assign a weight to define the order
-    
+
     # prepended links
     #[[menu.prepend]]
     #  url = "http://gohugo.io"
@@ -41,12 +41,12 @@ publishdir = "docs"
     #  url = "http://gohugo.io"
     #  name = "External link"
     #  weight = 10
-  
+
   # Hero section
   [params.hero]
     title = "Privacy matters."
     subtitle = 'Digital Privacy works on maintaining a healthy and open internet, as we believe that whenever citizens’ rights and freedoms in the online environment are endangered, so are human rights offline.'
- 
+
   # Intro section
   # Available icons: http://simplelineicons.com/
   [params.intro]
@@ -146,8 +146,11 @@ publishdir = "docs"
       img = "silvia.jpg"
       alt = "Silvia Puglisi"
       social = [
-        ["icon-globe", "https://www.hiro7.eu/"]
-      ]      
+        ["icon-globe", "https://www.hiro7.eu/"],
+        ["icon-twitter", "https://twitter.com/nopressure"],
+        ["icon-github", "https://github.com/hiromipaw"],
+        ["icon-linkedin", "https://es.linkedin.com/in/silviapuglisi"]
+      ]
 
   # Counters section
   #[params.counters]
@@ -170,7 +173,7 @@ publishdir = "docs"
     form = true
     title = "Get in touch"
     description = "For any question, inquiry, suggestion, feedback, please send us an email. We will be happy to review and reply in the sorthest time possible. Thanks."
-    
+
     # Available icons: http://simplelineicons.com/
     details = [
         ["icon-envelope", "info@digitalprivacy.cc"],
