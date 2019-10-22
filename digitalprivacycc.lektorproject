@@ -1,0 +1,8 @@
+[project]
+name = digitalprivacy.cc
+url = https://digitalprivacy.cc
+url_style = relative
+locale = en
+
+[servers.ghpages]
+target = ghpages+https://digitalprivacy/digitalprivacycc?cname=digitalprivacy.cc
