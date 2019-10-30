@@ -1,0 +1,20 @@
+_template: page.html
+---
+html: contents.html
+---
+title: Projects
+---
+description: We create cool projects
+---
+body:
+
+We are currently working on the following projects.
+
+##Entropie
+
+Entropie is a developer tool box that we like a lot.
+
+
+##TorDash
+
+TorDash is our project and we are really excited about it!

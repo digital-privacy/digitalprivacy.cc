@@ -1,5 +1,9 @@
+{% include 'meta.html' %}
 {% include 'header.html' %}
-{% block body %}{% endblock %}
+  {% block body %}{% endblock %}
+
+  {% include this.html %}
+
+
 {% include 'footer.html' %}
-</body>
-</html>
+{% include 'closing-tags.html' %}

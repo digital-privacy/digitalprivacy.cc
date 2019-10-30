@@ -1,0 +1,11 @@
+_template: page.html
+---
+html: contents.html
+---
+_model: people
+---
+title: Team
+---
+body:
+
+We are a nice group of people

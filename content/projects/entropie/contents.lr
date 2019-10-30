@@ -1,0 +1,17 @@
+_template: subpage.html
+---
+_model: project
+---
+html: contents.html
+---
+showcase: yes
+---
+title: Entropie
+---
+description: Entropie is a nice project. We are really proud.
+---
+body:
+
+##Entropie
+
+Entropie is our project and we are really excited about it!
