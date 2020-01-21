@@ -1,0 +1,31 @@
+{% include 'meta.html' %}
+{% include 'header.html' %}
+{% block body %}
+<!-- Hero unit -->
+<div class="hero-full-container background-image-container white-text-container">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <h1 class="hero__title">{{ this.title }}</h1>
+        <p>{{ this.description }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+<div class="section-container">
+  <div class="container">
+    <div class="row section-container-spacer">
+      <div class="col-xs-12 col-md-8 col-md-offset-2">
+        <div class="section-container-spacer">
+          {{ this.body }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% include 'footer.html' %}
+{% include 'closing-tags.html' %}

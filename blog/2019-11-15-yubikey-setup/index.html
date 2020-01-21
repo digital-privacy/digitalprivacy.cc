@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width,initial-scale=1" name="viewport">
+  <meta content="description" name="description">
+  <meta name="google" content="notranslate" />
+  <meta content="DigitalPrivacy" name="author">
+
+  <!-- Disable tap highlight on IE -->
+  <meta name="msapplication-tap-highlight" content="no">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="">
+  <link href="" rel="icon">
+
+  <link href="" rel="stylesheet">
+
+  <link rel="stylesheet" href="../../static/main.550dcf66.css?h=be1d7c14">
+  <title>Welcome — DigitalPrivacy</title>
+</head>
+<body>
+<header>
+  <nav class="navbar navbar-default active">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/" title="">
+          <img src="../../static/images/mashup-icon.svg?h=59fbbf38" class="navbar-logo-img" alt="">DigitalPrivacy</a>
+      </div>
+
+      <div class="collapse navbar-collapse" id="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="../../">Welcome</a></li>
+          
+            <li><a href="../../about/">About Us</a></li>
+          
+            <li><a href="../../blog/">Blog</a></li>
+          
+            <li><a href="../../projects/">Projects</a></li>
+          
+            <li><a href="../../services/">Services</a></li>
+          
+            <li><a href="../../donate/">Donate</a></li>
+          
+            <li><a href="../../articles/">Articles</a></li>
+          
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- Hero unit -->
+<div class="hero-full-container background-image-container white-text-container">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <h1 class="hero__title">How to setup and use yubikeys for authentication</h1>
+        <p><p>Using yubikeys for authentication isn't always straight forward. Here are a list of notes to setup your yubikey.</p>
+</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="section-container">
+  <div class="container">
+    <div class="row section-container-spacer">
+      <div class="col-xs-12 col-md-8 col-md-offset-2">
+        <div class="section-container-spacer">
+          <p>I use yubikeys to store my gpg and ssh keys.</p>
+<p>Before starting do a little bit of reading to familiarize yourself with the setup
+procedure.
+I have added a list of links at the end. These are mainly the resources that I used.</p>
+<h2>Generate a new gpg key</h2>
+<p>I have generated my keys on a qube VM without internet connection.</p>
+<pre><code>$ gpg --gen-key
+</code></pre>
+<p>Selected option 0 and moved on to create my ID associated with the key.</p>
+<p>In this step I used mostly the guide from yubico developers website [1]
+The guide goes through generating Sign (S) Authentication (A) and Encryption (E)
+keys.</p>
+<h2>Add an authentication key</h2>
+<pre><code>$ gpg --expert --edit-key 123ABC45
+</code></pre>
+<p>At this step we select another RSA key to attach to our key. In the gpg selection
+menu this corresponds to option 8.</p>
+<h2>Backup</h2>
+<p>Here is where you should backup your keys and revocation certificates. Please do
+I have personally lost yubikeys and having backups really helps.</p>
+<p>Also setup a PIN and a admin PIN for your yubikey [5]. With:</p>
+<pre><code>$ gpg --card-edit
+
+$ gpg/card&gt; admin
+</code></pre>
+<h2>Import the key to the yubikey</h2>
+<p>Finally we edit our key and add it to the keycard [1].</p>
+<pre><code>$ gpg --expert --edit-key 123ABC45
+
+$ gpg&gt; keytocard
+</code></pre>
+<p>Now your key is exported to your card and ready to be used.</p>
+<h2>Setup key to be used with ssh</h2>
+<pre><code>$ gpg2 -K --with-keygrip
+</code></pre>
+<p>This will show all your keys available with keygrip.
+Use the keygrip of your authentication key to export it to <code>sshcontrol</code></p>
+<pre><code>echo 1234567AB8CDFFF90G9H1I23JJ4K5L67M89N012O &gt; ~/.gnupg/sshcontrol
+</code></pre>
+<p>I have also added the following to my <code>~/.gnupg/gpg-agent.conf</code> [4]:</p>
+<pre><code>default-cache-ttl 600
+max-cache-ttl 7200
+enable-ssh-support
+write-env-file ~/.gpg-agent-info
+</code></pre>
+<p>And edited my <code>~/.bashrc</code> with:</p>
+<pre><code>gpg-connect-agent /bye
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+</code></pre>
+<p>You can now:</p>
+<pre><code>$ source ~/.bashrc
+$ ssh-add -l
+</code></pre>
+<p>This should list your new key.</p>
+<ul>
+<li>[1] <a href="https://developers.yubico.com/PGP/Importing_keys.html">https://developers.yubico.com/PGP/Importing_keys.html</a></li>
+<li>[2] <a href="https://zeos.ca/post/2018/gpg-yubikey5/">https://zeos.ca/post/2018/gpg-yubikey5/</a></li>
+<li>[3] <a href="https://www.esev.com/blog/post/2015-01-pgp-ssh-key-on-yubikey-neo/">https://www.esev.com/blog/post/2015-01-pgp-ssh-key-on-yubikey-neo/</a></li>
+<li>[4] <a href="https://www.isi.edu/~calvin/yubikeyssh.htm">https://www.isi.edu/~calvin/yubikeyssh.htm</a></li>
+<li>[5] <a href="https://developers.yubico.com/PGP/Card_edit.html">https://developers.yubico.com/PGP/Card_edit.html</a></li>
+</ul>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Footer -->
+<script>
+  document.addEventListener("DOMContentLoaded", function (event) {
+    navbarFixedTopAnimation();
+  });
+</script>
+<footer class="footer-container white-text-container">
+  <div class="container">
+    <div class="row">
+
+
+      <div class="col-xs-12">
+        <h3>DigitalPrivacy</h3>
+
+        <div class="row">
+          <div class="col-xs-12 col-sm-7">
+            <p><small>Website created by <a href="http://digitalprivacy.cc/" title="DigitalPrivacy">DigitalPrivacy</a></p>
+          </div>
+          <div class="col-xs-12 col-sm-5">
+            <p class="text-right">
+              <a href="https://github.com/" class="social-round-icon white-round-icon fa-icon" title="">
+                <i class="fa fa-github" aria-hidden="true"></i>
+              </a>
+              <a href="https://twitter.com/" class="social-round-icon white-round-icon fa-icon" title="">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+              </a>
+              <a href="https://www.linkedin.com/company/cyber-barcelona" class="social-round-icon white-round-icon fa-icon" title="">
+                <i class="fa fa-linkedin" aria-hidden="true"></i>
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function (event) {
+    navActivePage();
+    scrollRevelation('.reveal');
+  });
+</script>
+
+<script type="text/javascript" src="../../static/main.0cf8b554.js?h=5b0db49a"></script>
+</body>
+</html>

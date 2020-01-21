@@ -1,0 +1,15 @@
+_template: page.html
+---
+html: people.html
+---
+_model: people
+---
+description: Who we are is what we do
+---
+title: Team
+---
+body: We are a nice group of people
+---
+_discoverable: no
+---
+_hidden: true

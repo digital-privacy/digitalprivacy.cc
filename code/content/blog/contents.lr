@@ -1,0 +1,7 @@
+_template: blog-page.html
+---
+_model: blog
+---
+title: Blog
+---
+description: News and updates from DigitalPrivacy
