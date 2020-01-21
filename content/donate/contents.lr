@@ -1,0 +1,21 @@
+_template: page.html
+---
+html: contents.html
+---
+title: Donate
+---
+description: Here is how you can help
+---
+body:
+
+## Become a member
+
+## Paypal
+
+## Cryptocurrencies
+
+## Transferwise
+
+
+---
+_discoverable: yes

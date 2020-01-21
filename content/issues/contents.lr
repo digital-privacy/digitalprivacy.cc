@@ -1,0 +1,15 @@
+_template: page.html
+---
+html: contents.html
+---
+title: Issues
+---
+description: What do we work on
+---
+body:
+
+## [Internet censorship](/issues/censorship)
+
+## [Supporting the Tor network](/issues/tor-relays)
+---
+_discoverable: yes

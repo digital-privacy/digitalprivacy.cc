@@ -1,8 +1,10 @@
 _template: page.html
 ---
-html: contents.html
+html: people.html
 ---
 _model: people
+---
+description: Who we are is what we do
 ---
 title: Team
 ---

@@ -1,34 +1,38 @@
-<div class="section-container">
-  <div class="container text-center">
-    <div class="row section-container-spacer">
-      <div class="col-xs-12 col-md-12">
-        <h2>Team</h2>
-        <p>
-          We are a group of nice people <br>
-          For real like.
-        </p>
-      </div>
+{% set items = site.query('/people').include_undiscoverable(true) %}
+{% for item in items %}
+  <div class="card border col-xs-12 col-md-4 justify-content-center">
+    <img src="{{ '/static/images/profil-01.jpg'|asseturl }}" alt="" class="reveal reveal-content card-img-top rounded mx-auto d-block">
+
+    <div class="card-body">
+      <h5 class="card-title">{{ item.title }}</h5>
+
     </div>
-    <div class="row">
-      {% set items = site.query('/people').include_undiscoverable(true) %}
-      {% for item in items %}
-          <div class="col-xs-12 col-md-4">
-            <img src="{{ '/static/images/profil-01.jpg'|asseturl }}" alt="" class="reveal img-responsive reveal-content image-center">
-            <h3>{{ item.title }}</h3>
-            {{ item.body }}
-            <p>
-              <a href="https://facebook.com/" class="social-round-icon fa-icon" title="">
-                <i class="fa fa-facebook" aria-hidden="true"></i>
-              </a>
-              <a href="https://twitter.com/" class="social-round-icon fa-icon" title="">
-                <i class="fa fa-twitter" aria-hidden="true"></i>
-              </a>
-              <a href="https://www.linkedin.com/" class="social-round-icon fa-icon" title="">
-                <i class="fa fa-linkedin" aria-hidden="true"></i>
-              </a>
-            </p>
-          </div>
-      {% endfor %}
+
+    <div class="card-body ">
+      {{ item.body }}
+    </div>
+
+    <div class="card-body">
+      {% if item.github %}
+        <a href="{{ item.github }}" class="social-round-icon fa-icon card-link" title="">
+          <i class="fa fa-github" aria-hidden="true"></i>
+        </a>
+      {% endif %}
+      {% if item.twitter %}
+        <a href="{{ item.twitter }}" class="social-round-icon fa-icon card-link" title="">
+          <i class="fa fa-twitter" aria-hidden="true"></i>
+        </a>
+      {% endif %}
+      {% if item.linkedin %}
+        <a href="{{ item.linkedin }}" class="social-round-icon fa-icon card-link" title="">
+          <i class="fa fa-linkedin" aria-hidden="true"></i>
+        </a>
+      {% endif %}
+      {% if item.web %}
+        <a href="{{ item.web }}" class="social-round-icon fa-icon card-link" title="">
+          <i class="fa fa-code" aria-hidden="true"></i>
+        </a>
+      {% endif %}
     </div>
   </div>
-</div>
+{% endfor %}

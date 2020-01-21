@@ -8,11 +8,11 @@
                 {% set items = site.query('/projects').include_undiscoverable(true) %}
                 {% for item in items %}
 
-                {% if item.showcase %}
-                  <div class="item active">
-                {% else %}
-                <div class="item">              
-                {% endif %}
+                  {% if item.showcase %}
+                    <div class="item active">
+                  {% else %}
+                    <div class="item">
+                  {% endif %}
                       <img class="img-responsive" src="{{ '/static/images/img-06.jpg'|asseturl }}" alt="First slide">
                       <div class="carousel-caption card-shadow reveal">
 
@@ -30,7 +30,7 @@
                           Discover
                         </a>
                       </div>
-                  </div>
+                    </div>
                 {% endfor %}
               </div>
           </div>

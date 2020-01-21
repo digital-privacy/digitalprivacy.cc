@@ -8,10 +8,32 @@ showcase: yes
 ---
 title: Entropie
 ---
-description: Entropie is a nice project. We are really proud.
+description: Entropie: circumnvention multi-tool.
 ---
 body:
 
-##Entropie
+# Abstract
 
-Entropie is our project and we are really excited about it!
+Entropie is a multi-tool for people affected by internet censorship and traffic restrictions, offering a bundle with different services that people can use depending on their situation. It also contains walk-through wizard that helps them configuring a desired solution to a censorship problem.
+Entropie is create to provide easy of use of sophisticated systems for anti censorship and surveillance to targeted populations, such as journalists, human rights activists, people living under difficult political situation that might just want to read the news.
+
+
+# Scope
+
+Internet censorship can take many different forms and affect a variety of people. In most countries there is some form of internet censorship, meaning that the government might decide to block some websites for different reasons. In more authoritarian contries internet censorship can be more aggressive and can be implemented to shutdown or reduce people ability to organize and protest. There is evidence that as digitalr rights are restricted human rights are violated.
+
+The global investigative journalism network advises journalist to protect themselves and their sources from possible threats. The first step is usually try to protect communications by using  end-to-end encrypted services, followed by taking necessary measures to protect access to personal accounts and using secure and encrypted tools and services to store and share documents.
+
+Entropie is a tool created to by pass internet censorship and help users to communicate securely.
+
+Entropie bundle contains access to:
+    - A VPN
+    - A bridge to connect to the Tor network
+    - A proxy
+    - Private DNS
+
+Users can also configure extra private services if needed, like a personal bridge, onion hosting for static website or a small web app, domain fronting.
+
+Entropie can also be released as an opensource tool that can be installed by other organizations that need to run similar services.
+---
+_discoverable: yes
