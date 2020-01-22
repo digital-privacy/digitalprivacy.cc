@@ -10,14 +10,24 @@ body:
 
 ## Tor Bridges
 
+[Bridges](https://www.torproject.org/docs/bridges) are Tor relays that help you circumvent censorship.
+
 ## Tor Relays
+
+The Tor network consists entirely of relays run by volunteers, providing bandwidth and other services to Tor users.
 
 ## DNS
 
+The Domain Name System (DNS) is a hierarchical and decentralized naming system for computers, services, or other resources connected to the Internet. When you visit a website, a DNS server is queried to obtain the IP address of the machine where the website is hosted. The DNS server you use will see all the websites you are visiting.
+We offer DNS privacy services to help protect DNS traffic. The idea is also to diversify and decentralize the landscape of DNS providers.
+
 ### DNS over HTTPS
+
+DNS over HTTPS ([DoH](https://tools.ietf.org/html/rfc8484)) is a protocol for performing remote Domain Name System (DNS) resolution via the HTTPS protocol.
 
 ### DNS over TLS
 
+DNS over TLS ([DoT](https://tools.ietf.org/html/rfc7858)) is a security protocol for encrypting and wrapping Domain Name System (DNS) queries and answers via the Transport Layer Security (TLS) protocol.
 
 ---
 _discoverable: yes
