@@ -4,6 +4,8 @@ _model: person
 ---
 title: Davide
 ---
+image: /static/images/davide.jpg
+---
 twitter: https://twitter.com/DavBarbat
 ---
 role: Co-Founder

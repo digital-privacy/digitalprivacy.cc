@@ -2,6 +2,8 @@ _hidden: true
 ---
 _model: person
 ---
+image: /static/images/profil-01.jpg
+---
 title: Alessio
 ---
 body:

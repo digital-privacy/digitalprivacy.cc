@@ -1,7 +1,7 @@
 {% set items = site.query('/people').include_undiscoverable(true) %}
 {% for item in items %}
   <div class="card border col-xs-12 col-md-4 justify-content-center">
-    <img src="{{ '/static/images/profil-01.jpg'|asseturl }}" alt="" class="reveal reveal-content card-img-top rounded mx-auto d-block">
+    <img src="{{ item.image|asseturl }}" alt="avatar" class="reveal reveal-content card-img-top square-img rounded mx-auto d-block">
 
     <div class="card-body">
       <h5 class="card-title">{{ item.title }}</h5>
