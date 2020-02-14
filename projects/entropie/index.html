@@ -91,6 +91,28 @@ Entropie is create to provide easy of use of sophisticated systems for anti cens
 </code></pre>
 <p>Users can also configure extra private services if needed, like a personal bridge, onion hosting for static website or a small web app, domain fronting.</p>
 <p>Entropie can also be released as an opensource tool that can be installed by other organizations that need to run similar services.</p>
+Entropie is create to provide easy of use of sophisticated systems for anti censorship and surveillance to targeted populations, such as journalists, human rights activists, people living under difficult political situation that might just want to read the news.</p>
+<h1>Configuration</h1>
+
+<p>stubby.yml</p>
+<code>
+resolution_type: GETDNS_RESOLUTION_STUB
+
+dns_transport_list:
+  - GETDNS_TRANSPORT_TLS
+
+tls_authentication: GETDNS_AUTHENTICATION_NONE
+
+tls_query_padding_blocksize: 128
+
+edns_client_subnet_private : 1
+
+listen_addresses:
+  - 127.0.0.1
+  - 0::1
+
+  - address_data: 51.15.77.149
+</code>
 
         </div>
       </div>
