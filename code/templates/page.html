@@ -1,15 +1,24 @@
 {% extends "layout.html" %}
 {% block title %}{{ this.title }}{% endblock %}
 {% block body %}
-<!-- Hero unit -->
-<section class="hero bg-indigo pb-5">
+<!-- hero -->
+<section class="hero bg-indigo">
   <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-md-6 text-center text-white">
-        <h2>{{ this.title }}</h2>
-        <p>{{ this.description }}</p>
+    <div class="row">
+      <div class="col-md-8 text-white mb-3">
+        <h1 class="h2 pb-1">{{ this.title }}</h1>
+        <h4>{{ this.description }}</h4>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb breadcrumb-minimal">
+            {% if this.parent %}
+              <li class="breadcrumb-item"><a href="{{ this.parent.path|url }}">{{ this.parent.title }}</a></li>
+            {% endif %}
+            <li class="breadcrumb-item active" aria-current="page">{{ this.title }}</li>
+          </ol>
+        </nav>
       </div>
     </div>
   </div>
 </section>
+<!-- / hero -->
 {% endblock %}

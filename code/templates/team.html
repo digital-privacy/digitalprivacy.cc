@@ -1,34 +1,60 @@
 {% set items = site.query('/people').include_undiscoverable(true) %}
-{% for item in items %}
-  <div class="col">
-    <div class="card lift">
-      <img class="card-img-top" src="{{ item.image|asseturl }}" alt="avatar">
-      <div class="card-body">
-        <span class="eyebrow eyebrow-sm text-muted">{{ item.title }}</span>
-        <h4 class="fs-20 mt-1 card-title">{{ item.body }}</h4>
-      </div>
-      <div class="card-body">
-        {% if item.github %}
-          <a href="{{ item.github }}" class="social-round-icon fa-icon card-link" title="">
-            <i class="fa fa-github" aria-hidden="true"></i>
-          </a>
-        {% endif %}
-        {% if item.twitter %}
-          <a href="{{ item.twitter }}" class="social-round-icon fa-icon card-link" title="">
-            <i class="fa fa-twitter" aria-hidden="true"></i>
-          </a>
-        {% endif %}
-        {% if item.linkedin %}
-          <a href="{{ item.linkedin }}" class="social-round-icon fa-icon card-link" title="">
-            <i class="fa fa-linkedin" aria-hidden="true"></i>
-          </a>
-        {% endif %}
-        {% if item.web %}
-          <a href="{{ item.web }}" class="social-round-icon fa-icon card-link" title="">
-            <i class="fa fa-code" aria-hidden="true"></i>
-          </a>
-        {% endif %}
-      </div>
+<section class="overlay pt-5">
+  <div class="container overlay-item-top">
+    <div class="row gutter-2">
+      {% for item in items %}
+        <div class="col-12">
+          <div class="card stacked">
+            <div class="card-body">
+              <div class="row align-items-center">
+                <div class="col-md-2 text-center">
+                  <img class="card-img-top rounded-circle" src="{{ item.image|asseturl }}" alt="avatar">
+                </div>
+                <div class="col">
+                  <h3 class="card-title mt-2 mt-md-0 text-center text-md-left mb-2">{{ item.title }}</h3>
+                  <div class="row">
+                    <div class="col-12 col-sm-10">
+                      <p>{{ item.body }}</p>
+                    </div>
+                    <div class="col-12 col-sm-2 text-right">
+                      <ul class="list-group list-group-minimal">
+                        {% if item.github %}
+                          <li class="list-group-item">
+                            <a href="{{ item.github }}" class="social-round-icon fa-icon card-link" title="">
+                              <i class="icon-github fs-30 d-block mb-1"></i>
+                            </a>
+                          </li>
+                        {% endif %}
+                        {% if item.twitter %}
+                          <li class="list-group-item">
+                            <a href="{{ item.twitter }}" class="social-round-icon fa-icon card-link" title="">
+                              <i class="icon-twitter fs-30 d-block mb-1"></i>
+                            </a>
+                          </li>
+                        {% endif %}
+                        {% if item.linkedin %}
+                          <li class="list-group-item">
+                            <a href="{{ item.linkedin }}" class="social-round-icon fa-icon card-link" title="">
+                              <i class="icon-linkedin fs-30 d-block mb-1"></i>
+                            </a>
+                          </li>
+                        {% endif %}
+                        {% if item.web %}
+                          <li class="list-group-item">
+                            <a href="{{ item.web }}" class="social-round-icon fa-icon card-link" title="">
+                              <i class="icon-code fs-30 d-block mb-1"></i>
+                            </a>
+                          </li>
+                        {% endif %}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
     </div>
   </div>
-{% endfor %}
+</section>

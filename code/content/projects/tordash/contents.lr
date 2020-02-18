@@ -6,7 +6,9 @@ html: contents.html
 ---
 title: TorDash
 ---
-description: TorDash is a nice project. We are really proud.
+icon: dashboard
+---
+description: TorDash is a nice project.
 ---
 body:
 

@@ -43,36 +43,55 @@
 </header>
 <!-- / header -->
   
-<!-- Hero unit -->
-<section class="hero bg-indigo pb-5">
+<!-- hero -->
+<section class="hero bg-indigo">
   <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-md-6 text-center text-white">
-        <h2>Services</h2>
-        <p>We maintain the following services</p>
+    <div class="row">
+      <div class="col-md-8 text-white mb-3">
+        <h1 class="h2 pb-1">Services</h1>
+        <h4>We maintain the following services</h4>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb breadcrumb-minimal">
+            
+              <li class="breadcrumb-item"><a href="../">Hello World</a></li>
+            
+            <li class="breadcrumb-item active" aria-current="page">Services</li>
+          </ol>
+        </nav>
       </div>
     </div>
   </div>
 </section>
+<!-- / hero -->
 
 
-  <section>
-  <div class="container">
-    <div class="row justify-content-between">
-      <article id="content" class="col-lg-12">
-        <h2>Tor Bridges</h2>
+  <section class="overlay">
+  <div class="container overlay-item-top">
+    <div class="row">
+      <div class="col">
+        <div class="content boxed">
+          <div class="row separated">
+
+            <!-- content -->
+            <article class="col-md-12 content-body">
+
+              <h2>Tor Bridges</h2>
 <p><a href="https://www.torproject.org/docs/bridges">Bridges</a> are Tor relays that help you circumvent censorship.</p>
 <h2>Tor Relays</h2>
 <p>The Tor network consists entirely of relays run by volunteers, providing bandwidth and other services to Tor users.</p>
 <h2>DNS</h2>
 <p>The Domain Name System (DNS) is a hierarchical and decentralized naming system for computers, services, or other resources connected to the Internet. When you visit a website, a DNS server is queried to obtain the IP address of the machine where the website is hosted. The DNS server you use will see all the websites you are visiting.
 We offer DNS privacy services to help protect DNS traffic. The idea is also to diversify and decentralize the landscape of DNS providers.</p>
+<p><a href="https://servers.opennicproject.org/edit.php?srv=ns1.nl.dns.opennic.glue">ns1.nl.dns.opennic.glue</a></p>
 <h3>DNS over HTTPS</h3>
 <p>DNS over HTTPS (<a href="https://tools.ietf.org/html/rfc8484">DoH</a>) is a protocol for performing remote Domain Name System (DNS) resolution via the HTTPS protocol.</p>
 <h3>DNS over TLS</h3>
 <p>DNS over TLS (<a href="https://tools.ietf.org/html/rfc7858">DoT</a>) is a security protocol for encrypting and wrapping Domain Name System (DNS) queries and answers via the Transport Layer Security (TLS) protocol.</p>
 
-      </article>
+            </article>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -83,26 +102,26 @@ We offer DNS privacy services to help protect DNS traffic. The idea is also to d
   <div class="container">
     <div class="row gutter-3">
       <div class="col-12 col-md-2">
-        <a href="../../index.html"><img src="../static/images/digitalprivacy.svg?h=eab667ff" alt="DigitalPrivacy">DigitalPrivacy</a>
+        <a href="../../index.html"><img src="../static/images/digitalprivacy.svg?h=eab667ff" alt="DigitalPrivacy"></a>
       </div>
       <div class="col-12 col-md-6 text-white">
-        <p class="mb-4"></p>
+        <p class="mb-4">DigitalPrivacy.cc is a non-profit organization developing technologies to defend the open internet and everyone's right to access and share information, knowledge and ideas.</p>
         <div class="row">
           <div class="col">
             <ul class="list-group list-group-minimal">
               <li class="list-group-item">
                 <a href="https://github.com/digital-privacy" class="social-round-icon white-round-icon fa-icon" title="">
-                  <i class="fa fa-github" aria-hidden="true"></i>
+                  <i class="icon-github fs-30 d-block mb-1"></i>Github
                 </a>
               </li>
               <li class="list-group-item">
                 <a href="https://twitter.com/digprivacycc" class="social-round-icon white-round-icon fa-icon" title="">
-                  <i class="fa fa-twitter" aria-hidden="true"></i>
+                  <i class="icon-twitter fs-30 d-block mb-1"></i>@digprivacycc
                 </a>
               </li>
               <li class="list-group-item">
                 <a href="https://www.linkedin.com/company/cyber-barcelona" class="social-round-icon white-round-icon fa-icon" title="">
-                  <i class="fa fa-linkedin" aria-hidden="true"></i>
+                  <i class="icon-linkedin fs-30 d-block mb-1"></i>Linkedin
                 </a>
               </li>
             </ul>
@@ -117,13 +136,16 @@ We offer DNS privacy services to help protect DNS traffic. The idea is also to d
       </div>
       <div class="col-12 col-md-4 col-lg-2 ml-auto text-md-right">
         <div class="dropdown">
-          <button class="btn btn-inverted btn-block dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            English
-          </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="#">French</a>
-            <a class="dropdown-item" href="#">German</a>
+          <!--
+            <button class="btn btn-inverted btn-block dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              English
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#">Français (fr)</a>
+              <a class="dropdown-item" href="#">Español (es)</a>
+              <a class="dropdown-item" href="#">Deutsch (de)</a>
           </div>
+          -->
         </div>
       </div>
     </div>

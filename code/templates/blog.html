@@ -1,18 +1,26 @@
 {% from "macros/blog.html" import render_blog_post_summary %}
 {% from "macros/pagination.html" import render_pagination %}
 
-<section>
-  <div class="container">
-    <div class="row justify-content-between">
-      <article id="content" class="col-lg-12">
-          {% block body %}
-            {% for child in this.pagination.items %}
-              {{ render_blog_post_summary(child, from_index=true) }}
-            {% endfor %}
+<section class="overlay">
+  <div class="container overlay-item-top">
+    <div class="row">
+      <div class="col">
+        <div class="content boxed">
+          <div class="row separated">
 
-            {{ render_pagination(this.pagination) }}
-          {% endblock %}
-      </article>
+            <!-- content -->
+            <article class="col-md-12 content-body">
+              {% block body %}
+                {% for child in this.pagination.items %}
+                  {{ render_blog_post_summary(child, from_index=true) }}
+                {% endfor %}
+
+                {{ render_pagination(this.pagination) }}
+              {% endblock %}
+            </article>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
