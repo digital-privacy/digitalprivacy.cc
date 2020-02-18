@@ -1,45 +1,56 @@
-<!-- Footer -->
-<script>
-  document.addEventListener("DOMContentLoaded", function (event) {
-    navbarFixedTopAnimation();
-  });
-</script>
-<footer class="footer-container white-text-container">
+<!-- footer -->
+<footer class="bg-indigo">
   <div class="container">
-    <div class="row">
-
-
-      <div class="col-xs-12">
-        <h3>DigitalPrivacy</h3>
-
+    <div class="row gutter-3">
+      <div class="col-12 col-md-2">
+        <a href="../../index.html"><img src="{{ '/static/images/digitalprivacy.svg'|asseturl }}" alt="DigitalPrivacy">DigitalPrivacy</a>
+      </div>
+      <div class="col-12 col-md-6 text-white">
+        <p class="mb-4"></p>
         <div class="row">
-          <div class="col-xs-12 col-sm-7">
-            <p><small>Website created by <a href="http://digitalprivacy.cc/" title="DigitalPrivacy">DigitalPrivacy</a></p>
+          <div class="col">
+            <ul class="list-group list-group-minimal">
+              <li class="list-group-item">
+                <a href="https://github.com/digital-privacy" class="social-round-icon white-round-icon fa-icon" title="">
+                  <i class="fa fa-github" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li class="list-group-item">
+                <a href="https://twitter.com/digprivacycc" class="social-round-icon white-round-icon fa-icon" title="">
+                  <i class="fa fa-twitter" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li class="list-group-item">
+                <a href="https://www.linkedin.com/company/cyber-barcelona" class="social-round-icon white-round-icon fa-icon" title="">
+                  <i class="fa fa-linkedin" aria-hidden="true"></i>
+                </a>
+              </li>
+            </ul>
           </div>
-          <div class="col-xs-12 col-sm-5">
-            <p class="text-right">
-              <a href="https://github.com/digital-privacy" class="social-round-icon white-round-icon fa-icon" title="">
-                <i class="fa fa-github" aria-hidden="true"></i>
-              </a>
-              <a href="https://twitter.com/digprivacycc" class="social-round-icon white-round-icon fa-icon" title="">
-                <i class="fa fa-twitter" aria-hidden="true"></i>
-              </a>
-              <a href="https://www.linkedin.com/company/cyber-barcelona" class="social-round-icon white-round-icon fa-icon" title="">
-                <i class="fa fa-linkedin" aria-hidden="true"></i>
-              </a>
-            </p>
+          <div class="col">
+            <ul class="list-group list-group-minimal">
+              <li class="list-group-item"></li>
+              <li class="list-group-item"></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-4 col-lg-2 ml-auto text-md-right">
+        <div class="dropdown">
+          <button class="btn btn-inverted btn-block dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            English
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">French</a>
+            <a class="dropdown-item" href="#">German</a>
           </div>
         </div>
       </div>
     </div>
   </div>
 </footer>
+<!-- / footer -->
 
-<script>
-  document.addEventListener("DOMContentLoaded", function (event) {
-    navActivePage();
-    scrollRevelation('.reveal');
-  });
-</script>
 
-<script type="text/javascript" src="{{ '/static/main.0cf8b554.js'|asseturl }}"></script>
+<script src="{{ '/static/js/vendor.min.js'|asseturl }}"></script>
+<script src="{{ '/static/js/app.js'|asseturl }}"></script>
