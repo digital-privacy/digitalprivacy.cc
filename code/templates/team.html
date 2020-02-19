@@ -1,55 +1,41 @@
 {% set items = site.query('/people').include_undiscoverable(true) %}
 <section class="overlay pt-5">
   <div class="container overlay-item-top">
-    <div class="row gutter-2">
+    <div class="row gutter-2 justify-content-center">
       {% for item in items %}
-        <div class="col-12">
-          <div class="card stacked">
-            <div class="card-body">
-              <div class="row align-items-center">
-                <div class="col-md-2 text-center">
-                  <img class="card-img-top rounded-circle" src="{{ item.image|asseturl }}" alt="avatar">
-                </div>
-                <div class="col">
-                  <h3 class="card-title mt-2 mt-md-0 text-center text-md-left mb-2">{{ item.title }}</h3>
-                  <div class="row">
-                    <div class="col-12 col-sm-10">
-                      <p>{{ item.body }}</p>
-                    </div>
-                    <div class="col-12 col-sm-2 text-right">
-                      <ul class="list-group list-group-minimal">
-                        {% if item.github %}
-                          <li class="list-group-item">
-                            <a href="{{ item.github }}" class="social-round-icon fa-icon card-link" title="">
-                              <i class="icon-github fs-30 d-block mb-1"></i>
-                            </a>
-                          </li>
-                        {% endif %}
-                        {% if item.twitter %}
-                          <li class="list-group-item">
-                            <a href="{{ item.twitter }}" class="social-round-icon fa-icon card-link" title="">
-                              <i class="icon-twitter fs-30 d-block mb-1"></i>
-                            </a>
-                          </li>
-                        {% endif %}
-                        {% if item.linkedin %}
-                          <li class="list-group-item">
-                            <a href="{{ item.linkedin }}" class="social-round-icon fa-icon card-link" title="">
-                              <i class="icon-linkedin fs-30 d-block mb-1"></i>
-                            </a>
-                          </li>
-                        {% endif %}
-                        {% if item.web %}
-                          <li class="list-group-item">
-                            <a href="{{ item.web }}" class="social-round-icon fa-icon card-link" title="">
-                              <i class="icon-code fs-30 d-block mb-1"></i>
-                            </a>
-                          </li>
-                        {% endif %}
-                      </ul>
-                    </div>
-                  </div>
-                </div>
+        <div class="col-10">
+          <div class="card mb-3">
+            <div class="card-body col-12 row">
+              <div class="col-md-4 col-sm-12">
+                <img class="rounded-circle col-12" src="{{ item.image|asseturl }}" alt="avatar">
+              </div>
+              <div class="col-md-8 col-sm-12">
+                <h3 class="card-title mt-2 mt-md-0 text-center text-md-left mb-2">{{ item.title }}</h3>
+                <p class="card-text">{{ item.body }}</p>
+              </div>
+            </div>
+            <div class="card-footer text-muted">
+              <div class="row justify-content-end">
+                {% if item.github %}
+                  <a href="{{ item.github }}" class="social-round-icon fa-icon card-link" title="">
+                    <i class="icon-github fs-30 d-block mb-1"></i>
+                  </a>
+                {% endif %}
+                {% if item.twitter %}
+                  <a href="{{ item.twitter }}" class="social-round-icon fa-icon card-link" title="">
+                    <i class="icon-twitter fs-30 d-block mb-1"></i>
+                  </a>
+                {% endif %}
+                {% if item.linkedin %}
+                  <a href="{{ item.linkedin }}" class="social-round-icon fa-icon card-link" title="">
+                    <i class="icon-linkedin fs-30 d-block mb-1"></i>
+                  </a>
+                {% endif %}
+                {% if item.web %}
+                  <a href="{{ item.web }}" class="social-round-icon fa-icon card-link" title="">
+                    <i class="icon-code fs-30 d-block mb-1"></i>
+                  </a>
+                {% endif %}
               </div>
             </div>
           </div>
